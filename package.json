@@ -1,0 +1,40 @@
+{
+  "name": "utha-stories",
+  "version": "0.1.0",
+  "description": "utha components",
+  "main": "index.js",
+  "author": "Yuthasak Tanruengsri",
+  "license": "MIT",
+  "dependencies": {
+    "app-root-dir": "^1.0.2",
+    "classnames": "^2.2.5",
+    "postcss-cssnext": "^2.11.0",
+    "postcss-loader": "^2.0.5",
+    "precss": "^1.4.0",
+    "prop-types": "^15.5.10",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4"
+  },
+  "devDependencies": {
+    "@kadira/storybook": "^2.35.3",
+    "babel-eslint": "^7.2.3",
+    "css-loader": "^0.28.1",
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb": "^15.0.1",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^5.0.3",
+    "eslint-plugin-react": "^7.0.1",
+    "file-loader": "^0.11.1",
+    "json-loader": "^0.5.4",
+    "node-sass": "^4.5.3",
+    "raw-loader": "^0.5.1",
+    "sass-loader": "^6.0.5",
+    "style-loader": "^0.17.0",
+    "webpack": "^2.5.1"
+  },
+  "scripts": {
+    "lint": "eslint src --ext .jsx --ext .js",
+    "storybook": "start-storybook -p 9001 -c .storybook",
+    "build-storybook": "build-storybook -s public"
+  }
+}
