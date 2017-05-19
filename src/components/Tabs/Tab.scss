@@ -1,6 +1,60 @@
 :global  {
   .utab {
     position: relative;
-    background: black;
+    list-style: none;
+    background-color: transparent;
+
+    // Typography
+
+    &--active {
+      color: black;
+    }
+
+    &--disabled {
+      color: grey;
+    }
+
+    button {
+      // Look&Feel
+      border-radius: 0;
+      border: none;
+      outline: none;
+      color: #333;
+      background-color: transparent;
+
+      // Usability
+      cursor: pointer;
+
+      // Animation
+      transition: 0.3s ease-in-out;
+    }
+
+    &__label {
+      // Look&Feel
+      padding-bottom: 5px;
+      border-bottom: 3px solid transparent;
+
+      // Usability
+      cursor: pointer;
+
+      // Animation
+      transition: 0.2s ease-in-out;
+
+      &:hover {
+        // Look&Feel
+        border-color: #ffde45;
+
+        // Animation
+        transition: 0.3s ease-in-out;
+      }
+
+      &--active {
+        border-color: black;
+      }
+
+      &--disabled {
+        border-color: transparent;
+      }
+    }
   }
 }

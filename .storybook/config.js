@@ -2,7 +2,7 @@ import React from 'react';
 import { configure, addDecorator } from '@kadira/storybook';
 
 addDecorator((story) => (
-    <div style={{ textAlign: 'center' }}>
+    <div style={{ padding: '10px' }}>
         {story()}
     </div>
 ));

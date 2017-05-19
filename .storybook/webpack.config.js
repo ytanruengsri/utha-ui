@@ -10,7 +10,6 @@ module.exports = {
                 loaders: [
                     'style-loader?insertInto=body',
                     'css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]',
-                    'postcss-loader',
                     'sass-loader',
                 ],
                 exclude: path.join(__dirname, '..', 'node_modules'),

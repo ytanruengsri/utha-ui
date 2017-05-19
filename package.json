@@ -34,7 +34,8 @@
   },
   "scripts": {
     "lint": "eslint src --ext .jsx --ext .js",
-    "storybook": "start-storybook -p 9001 -c .storybook",
+    "start": "start-storybook -p 9001 -c .storybook",
+    "storybook": "npm run start",
     "build-storybook": "build-storybook -s public"
   }
 }

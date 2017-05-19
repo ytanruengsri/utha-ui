@@ -7,7 +7,8 @@ import './Tabs.scss';
 
 const Classname = {
     BASE: 'utabs',
-    HEADLINE: 'utabs__headline',
+    BAR: 'utabs__bar',
+    PANEL: 'utabs__panel',
 };
 
 const TabPosition = [
@@ -59,12 +60,15 @@ class Tabs extends Component {
         } = this.state;
         const classes = classnames(
             Classname.BASE,
+        );
+        const tabsBarClasses = classnames(
+            Classname.BAR,
             {
-                [`${Classname.BASE}--justify-${justify}`]: justify,
+                [`${Classname.BAR}--justify-${justify}`]: justify,
             },
         );
-        const tabHeadlineClasses = classnames(
-            Classname.HEADLINE,
+        const tabsPanelClasses = classnames(
+            Classname.PANEL,
         );
 
         let activeTab = null;
@@ -76,6 +80,7 @@ class Tabs extends Component {
             if (isTabActive) {
                 activeTab = tabProps.children;
             }
+            // or create <li> element here
             return React.cloneElement(tab, {
                 id: tabProps.id,
                 active: isTabActive,
@@ -92,10 +97,10 @@ class Tabs extends Component {
                 role="tablist"
                 className={classes}
             >
-                <ul className={tabHeadlineClasses}>
+                <ul className={tabsBarClasses}>
                     {tabs}
                 </ul>
-                <div role="tabpanel" style={{ border: '1px solid black' }}>
+                <div role="tabpanel" className={tabsPanelClasses}>
                     {activeTab}
                 </div>
             </div>

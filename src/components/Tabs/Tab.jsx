@@ -6,6 +6,7 @@ import './Tab.scss';
 const Classname = {
     BASE: 'utab',
     BUTTON: 'utab__button',
+    LABEL: 'utab__label',
 };
 
 const Tab = ({
@@ -21,6 +22,12 @@ const Tab = ({
             [`${Classname.BASE}--disabled`]: disabled,
         },
     );
+    const labelClasses = classnames(
+        Classname.LABEL, {
+            [`${Classname.LABEL}--active`]: active,
+            [`${Classname.LABEL}--disabled`]: disabled,
+        },
+    );
     return (
         <li
             className={classes}
@@ -34,7 +41,12 @@ const Tab = ({
                 className={Classname.BUTTON}
                 onClick={onClick}
             >
-                {headline}
+                <label
+                    className={labelClasses}
+                    htmlFor={id}
+                >
+                    {headline}
+                </label>
             </button>
         </li>
     );

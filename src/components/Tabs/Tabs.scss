@@ -3,4 +3,23 @@
     position: relative;
     color: red;
   }
+
+  .utabs__bar {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 10px 0;
+    padding: 0;
+
+    &--justify-start {
+      justify-content: flex-start;
+    }
+
+    &--justify-end {
+      justify-content: flex-end;
+    }
+
+    &--justify-center {
+      justify-content: center;
+    }
+  }
 }
