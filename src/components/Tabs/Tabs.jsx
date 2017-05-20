@@ -35,11 +35,6 @@ class Tabs extends Component {
         };
     }
 
-    componentWillReceiveProps(nextProps) {
-        // FIXME: Check if tab key is changed
-        this.setState({ activeKey: nextProps.activeKey });
-    }
-
     activate(key) {
         this.setState({ activeKey: key });
 
@@ -118,7 +113,6 @@ Tabs.propTypes = {
 };
 
 Tabs.defaultProps = {
-    activeKey: '',
     justify: 'start',
     tabPosition: 'top',
     tabHeadlineStyle: {},

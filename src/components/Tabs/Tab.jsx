@@ -28,6 +28,7 @@ const Tab = ({
             [`${Classname.LABEL}--disabled`]: disabled,
         },
     );
+
     return (
         <li
             className={classes}
