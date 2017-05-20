@@ -82,6 +82,7 @@ storiesOf('Tabs', module)
         <div>
             <div style={{ margin: '30px 0' }}>
                 <h3>Justify Start</h3>
+                <hr />
                 <Tabs
                     defaultActiveKey="t2"
                     onTabClick={action('clicked')}
@@ -101,6 +102,7 @@ storiesOf('Tabs', module)
             </div>
             <div style={{ margin: '30px 0' }}>
                 <h3>Justify Center</h3>
+                <hr />
                 <Tabs
                     defaultActiveKey="t2"
                     onTabClick={action('clicked')}
@@ -120,6 +122,7 @@ storiesOf('Tabs', module)
             </div>
             <div style={{ margin: '30px 0' }}>
                 <h3>Justify End</h3>
+                <hr />
                 <Tabs
                     defaultActiveKey="t2"
                     onTabClick={action('clicked')}
