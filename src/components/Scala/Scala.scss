@@ -9,7 +9,21 @@
       align-content: space-between;
 
       // Spacing
-      padding: 0px;
+      padding: 0;
+    }
+
+    &__headline {
+      &--align-left {
+        text-align: left;
+      }
+
+      &--align-center {
+        text-align: center;
+      }
+
+      &--align-right {
+        text-align: right;
+      }
     }
 
     &__litem {

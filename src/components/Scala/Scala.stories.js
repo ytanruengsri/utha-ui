@@ -61,10 +61,36 @@ const sections = [
 ];
 
 storiesOf('Scala', module)
-    .add('default', () => (
+    .add('Default', () => (
+        <Scala
+            sections={sections}
+        />
+    ))
+    .add('Headline Alignment', () => (
         <div>
-            <Scala
-                sections={sections}
-            />
+            <div style={{ margin: '30px 0' }}>
+                <h3>Align Left</h3>
+                <hr />
+                <Scala
+                    sections={sections}
+                    headlineAlignment="left"
+                />
+            </div>
+            <div style={{ margin: '30px 0' }}>
+                <h3>Align Center</h3>
+                <hr />
+                <Scala
+                    sections={sections}
+                    headlineAlignment="center"
+                />
+            </div>
+            <div style={{ margin: '30px 0' }}>
+                <h3>Align Right</h3>
+                <hr />
+                <Scala
+                    sections={sections}
+                    headlineAlignment="right"
+                />
+            </div>
         </div>
     ));
