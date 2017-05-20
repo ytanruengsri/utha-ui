@@ -2,10 +2,6 @@ import React from 'react';
 import { storiesOf } from '@kadira/storybook';
 import Container from './Container';
 
-const ProductCard = (
-    <div style={{ backgroundColor: '#E6E6E6', width: '246px', height: '355px' }} />
-);
-
 storiesOf('Container', module)
     .add('with flex', () => (
         <Container flex>
