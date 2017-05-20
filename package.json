@@ -26,6 +26,7 @@
     "eslint-plugin-jsx-a11y": "^5.0.3",
     "eslint-plugin-react": "^7.0.1",
     "file-loader": "^0.11.1",
+    "gh-pages-deploy": "^0.4.2",
     "json-loader": "^0.5.4",
     "node-sass": "^4.5.3",
     "raw-loader": "^0.5.1",
@@ -36,7 +37,19 @@
   "scripts": {
     "lint": "eslint src --ext .jsx --ext .js",
     "start": "start-storybook -p 9001 -c .storybook",
+    "nojekyll": "touch .nojekyll",
+    "deploy": "gh-pages-deploy",
     "storybook": "npm run start",
-    "build-storybook": "build-storybook -s public"
+    "build-storybook": "build-storybook -o public"
+  },
+  "gh-pages-deploy": {
+    "staticpath": "public",
+    "prep": [
+      "build-storybook"
+    ],
+    "post": [
+      "nojekyll"
+    ],
+    "noprompt": true
   }
 }
