@@ -6,13 +6,9 @@
 
     // Typography
 
-    &--active {
-      color: black;
-    }
+    &--active {}
 
-    &--disabled {
-      color: grey;
-    }
+    &--disabled {}
 
     button {
       // Look&Feel
@@ -54,6 +50,12 @@
 
       &--disabled {
         border-color: transparent;
+        color: grey;
+
+        &:hover {
+          cursor: no-drop;
+          border-color: transparent;
+        }
       }
     }
   }

@@ -31,7 +31,7 @@ class Tabs extends Component {
         this.activate = this.activate.bind(this);
 
         this.state = {
-            activeKey: props.activeKey,
+            activeKey: props.activeKey || props.defaultActiveKey,
         };
     }
 
@@ -52,8 +52,6 @@ class Tabs extends Component {
         const {
             children,
             justify,
-            defaultActiveKey,
-            onTabClick,
         } = this.props;
         const {
             activeKey,
@@ -76,7 +74,7 @@ class Tabs extends Component {
             if (!tab) return null;
 
             const tabProps = tab.props || tab._store.props || {};
-            const isTabActive = tabProps.id === activeKey || tabProps.id === defaultActiveKey;
+            const isTabActive = tabProps.id === activeKey;
             if (isTabActive) {
                 activeTab = tabProps.children;
             }
