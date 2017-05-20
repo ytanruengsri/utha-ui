@@ -13,7 +13,8 @@
     "precss": "^1.4.0",
     "prop-types": "^15.5.10",
     "react": "^15.5.4",
-    "react-dom": "^15.5.4"
+    "react-dom": "^15.5.4",
+    "uuid": "^3.0.1"
   },
   "devDependencies": {
     "@kadira/storybook": "^2.35.3",

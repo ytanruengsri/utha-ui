@@ -3,6 +3,9 @@ import { storiesOf, action } from '@kadira/storybook';
 import Tabs from './Tabs';
 
 const Tab = Tabs.Tab;
+const tabContent1 = 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.';
+const tabContent2 = 'Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.';
+const tabContent3 = 'Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.';
 
 storiesOf('Tabs', module)
     .add('Specification', () => (
@@ -31,13 +34,13 @@ storiesOf('Tabs', module)
             onTabSwitched={action('switched')}
         >
             <Tab id="t1" headline="Tab Headline 1">
-                <div>Tab content 1</div>
+                <div>{tabContent1}</div>
             </Tab>
             <Tab id="t2" headline="Tab Headline 2">
-                <div>Tab content 2</div>
+                <div>{tabContent2}</div>
             </Tab>
             <Tab id="t3" headline="Tab Headline 3">
-                <div>Tab content 3</div>
+                <div>{tabContent3}</div>
             </Tab>
         </Tabs>
     ))
@@ -48,13 +51,13 @@ storiesOf('Tabs', module)
             onTabSwitched={action('switched')}
         >
             <Tab id="t1" headline="Tab Headline 1">
-                <div>Tab content 1</div>
+                <div>{tabContent1}</div>
             </Tab>
             <Tab id="t2" headline="Tab Headline 2" disabled>
-                <div>Tab content 2</div>
+                <div>{tabContent2}</div>
             </Tab>
             <Tab id="t3" headline="Tab Headline 3">
-                <div>Tab content 3</div>
+                <div>{tabContent3}</div>
             </Tab>
         </Tabs>
     ))
@@ -65,13 +68,13 @@ storiesOf('Tabs', module)
             onTabSwitched={action('switched')}
         >
             <Tab id="t1" headline="Tab Headline 1">
-                <div>Tab content 1</div>
+                <div>{tabContent1}</div>
             </Tab>
             <Tab id="t2" headline="Tab Headline 2">
-                <div>Tab content 2</div>
+                <div>{tabContent2}</div>
             </Tab>
             <Tab id="t3" headline="Tab Headline 3">
-                <div>Tab content 3</div>
+                <div>{tabContent3}</div>
             </Tab>
         </Tabs>
     ))
@@ -86,13 +89,13 @@ storiesOf('Tabs', module)
                     justify="start"
                 >
                     <Tab id="t1" headline="Tab Headline 1">
-                        <div>Tab content 1</div>
+                        <div>{tabContent1}</div>
                     </Tab>
                     <Tab id="t2" headline="Tab Headline 2">
-                        <div>Tab content 2</div>
+                        <div>{tabContent2}</div>
                     </Tab>
                     <Tab id="t3" headline="Tab Headline 3">
-                        <div>Tab content 3</div>
+                        <div>{tabContent3}</div>
                     </Tab>
                 </Tabs>
             </div>
@@ -105,13 +108,13 @@ storiesOf('Tabs', module)
                     justify="center"
                 >
                     <Tab id="t1" headline="Tab Headline 1">
-                        <div>Tab content 1</div>
+                        <div>{tabContent1}</div>
                     </Tab>
                     <Tab id="t2" headline="Tab Headline 2">
-                        <div>Tab content 2</div>
+                        <div>{tabContent2}</div>
                     </Tab>
                     <Tab id="t3" headline="Tab Headline 3">
-                        <div>Tab content 3</div>
+                        <div>{tabContent3}</div>
                     </Tab>
                 </Tabs>
             </div>
@@ -124,13 +127,13 @@ storiesOf('Tabs', module)
                     justify="end"
                 >
                     <Tab id="t1" headline="Tab Headline 1">
-                        <div>Tab content 1</div>
+                        <div>{tabContent1}</div>
                     </Tab>
                     <Tab id="t2" headline="Tab Headline 2">
-                        <div>Tab content 2</div>
+                        <div>{tabContent2}</div>
                     </Tab>
                     <Tab id="t3" headline="Tab Headline 3">
-                        <div>Tab content 3</div>
+                        <div>{tabContent3}</div>
                     </Tab>
                 </Tabs>
             </div>
@@ -144,22 +147,22 @@ storiesOf('Tabs', module)
                 onTabSwitched={action('switched')}
             >
                 <Tab id="t1" headline="Tab Headline 1">
-                    <div>Tab content 1</div>
+                    <div>{tabContent1}</div>
                 </Tab>
                 <Tab id="t2" headline="Tab Headline 2">
-                    <div>Tab content 2</div>
+                    <div>{tabContent2}</div>
                 </Tab>
                 <Tab id="t3" headline="Tab Headline 3">
-                    <div>Tab content 3</div>
+                    <div>{tabContent3}</div>
                 </Tab>
                 <Tab id="t4" headline="Tab Headline 4">
-                    <div>Tab content 4</div>
+                    <div>{tabContent1}</div>
                 </Tab>
                 <Tab id="t5" headline="Tab Headline 5">
-                    <div>Tab content 5</div>
+                    <div>{tabContent2}</div>
                 </Tab>
                 <Tab id="t6" headline="Tab Headline 6">
-                    <div>Tab content 6</div>
+                    <div>{tabContent3}</div>
                 </Tab>
             </Tabs>
         </div>

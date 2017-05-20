@@ -1,0 +1,20 @@
+:global {
+  .ucontainer {
+    position: relative;
+
+    &--flex {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+
+  .ucontainer__item {
+    position: relative;
+
+    // Look&Feel
+    list-style: none;
+
+    // Spacing
+    margin: 0 28px 30px 0;
+  }
+}

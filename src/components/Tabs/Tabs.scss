@@ -1,4 +1,4 @@
-:global {
+:global {
   .utabs {
     position: relative;
     color: red;
@@ -10,15 +10,15 @@
     margin: 10px 0;
     padding: 0;
 
-    &--justify-start {
+    &--justify-start {
       justify-content: flex-start;
     }
 
-    &--justify-end {
+    &--justify-end {
       justify-content: flex-end;
     }
 
-    &--justify-center {
+    &--justify-center {
       justify-content: center;
     }
   }
