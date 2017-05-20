@@ -1,5 +1,7 @@
 # utha-ui
 
+Check storybook [here](https://ytanruengsri.github.io/utha-ui)
+
 ## Setup
 ```
 $ yarn
