@@ -12,4 +12,8 @@ $ yarn
 $ yarn run storybook
 ```
 
-open `http://localhost:9001` in your faviourite browser
+open `http://localhost:9001` in your favourite browser
+
+## How to deploy to gh-page?
+- Push latest changes to master and keep master clean
+- run `yarn run deploy`
