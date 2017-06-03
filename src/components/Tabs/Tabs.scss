@@ -8,6 +8,13 @@
     flex-wrap: wrap;
     margin: 10px 0;
     padding: 0;
+    white-space: nowrap;
+    overflow-x: scroll;
+
+    &::-webkit-scrollbar {
+      display: none;
+      -webkit-appearance: none;
+    }
 
     &--justify-start {
       justify-content: flex-start;

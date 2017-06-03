@@ -143,7 +143,7 @@ storiesOf('Tabs', module)
         </div>
     ))
     .add('Scroll', () => (
-        <div style={{ width: 100 }}>
+        <div style={{ width: 500 }}>
             <Tabs
                 defaultActiveKey="t2"
                 onTabClick={action('clicked')}
@@ -165,6 +165,24 @@ storiesOf('Tabs', module)
                     <div>{tabContent2}</div>
                 </Tab>
                 <Tab id="t6" headline="Tab Headline 6">
+                    <div>{tabContent3}</div>
+                </Tab>
+                <Tab id="t7" headline="Tab Headline 7">
+                    <div>{tabContent1}</div>
+                </Tab>
+                <Tab id="t8" headline="Tab Headline 8">
+                    <div>{tabContent2}</div>
+                </Tab>
+                <Tab id="t9" headline="Tab Headline 9">
+                    <div>{tabContent3}</div>
+                </Tab>
+                <Tab id="t10" headline="Tab Headline 10">
+                    <div>{tabContent1}</div>
+                </Tab>
+                <Tab id="t11" headline="Tab Headline 11">
+                    <div>{tabContent2}</div>
+                </Tab>
+                <Tab id="t12" headline="Tab Headline 12">
                     <div>{tabContent3}</div>
                 </Tab>
             </Tabs>

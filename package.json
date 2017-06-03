@@ -8,6 +8,7 @@
   "dependencies": {
     "app-root-dir": "^1.0.2",
     "classnames": "^2.2.5",
+    "lodash": "^4.17.4",
     "postcss-cssnext": "^2.11.0",
     "postcss-loader": "^2.0.5",
     "precss": "^1.4.0",
@@ -18,6 +19,7 @@
   },
   "devDependencies": {
     "@kadira/storybook": "^2.35.3",
+    "@storybook/addon-info": "^3.0.0-alpha.0",
     "babel-eslint": "^7.2.3",
     "css-loader": "^0.28.1",
     "eslint": "^3.19.0",
