@@ -4741,6 +4741,10 @@ randombytes@^2.0.0, randombytes@^2.0.1:
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/randombytes/-/randombytes-2.0.3.tgz#674c99760901c3c4112771a31e521dc349cc09ec"
 
+randomcolor@^0.5.2:
+  version "0.5.2"
+  resolved "https://registry.yarnpkg.com/randomcolor/-/randomcolor-0.5.2.tgz#9590bd5376b133157e59d81e74f88c9f4943693b"
+
 range-parser@^1.0.3, range-parser@~1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/range-parser/-/range-parser-1.2.0.tgz#f49be6b487894ddc40dcc94a322f611092e00d5e"
