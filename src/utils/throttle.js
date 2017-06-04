@@ -17,7 +17,7 @@ export default (func, delay = 250, scope) => {
             timeout = setTimeout(() => {
                 last = now;
                 func.apply(context, args);
-            }, delay);
+            }, delay + (last - now));
         } else {
             last = now;
             func.apply(context, args);
