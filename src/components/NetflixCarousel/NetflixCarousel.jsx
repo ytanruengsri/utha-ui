@@ -10,7 +10,6 @@ const Classname = {
     SLIDE: 'ucarousel--netflix__slide',
     ACTIONS: 'ucarousel--netflix__actions',
     BUTTON: 'ucarousel--netflix__button',
-    INDICATOR: 'ucarousel--netflix__indicator',
 };
 
 class NetflixCarousel extends Component {
@@ -19,52 +18,86 @@ class NetflixCarousel extends Component {
 
         this.center = this.center.bind(this);
         this.renderSlides = this.renderSlides.bind(this);
-        this.renderIndicators = this.renderIndicators.bind(this);
         this.renderArrows = this.renderArrows.bind(this);
         this.handlePrev = this.handlePrev.bind(this);
         this.handleNext = this.handleNext.bind(this);
+        this.getSlideStyle = this.getSlideStyle.bind(this);
 
         this.state = {
-            current: props.centerMode ? this.center() : 0,
+            current: this.center(),
+            move: 0,
             width: props.width,
             height: props.height,
         };
     }
 
-    componentDidMount() {
+    getSlideStyle() {
+        const {
+            visibleSideSlides,
+        } = this.props;
+        const {
+            width,
+        } = this.state;
 
-    }
-
-    componentWillReceiveProps() {
-
-    }
-
-    componentWillUnmount() {
-
-    }
-
-    center() {
+        const baseWidth = width / ((visibleSideSlides * 2) + 1);
+        const proportionalHeight = baseWidth / (16 / 9);
         const length = React.Children.count(this.props.children);
-        return Math.floor(length / 2);
-    }
+        const offset = length % 2 === 0 ? -width / 10 : 0;
 
-    handlePrev() {
-        if (this.props.onPrev) {
-            this.props.onPrev();
-        }
+        return {
+            width: `${baseWidth}px`,
+            height: `${proportionalHeight}px`,
+            transform: ` translateX(${this.state.move + offset}px)`,
+        };
     }
 
     handleNext() {
         const {
             width,
         } = this.state;
+        const {
+            visibleSideSlides,
+        } = this.props;
 
-        let current = this.state.current;
+        const current = this.state.current;
+        const baseWidth = width / ((visibleSideSlides * 2) + 1);
+        const distance = this.center() - (current + 1);
+        const move = distance * baseWidth;
+
         if (this.props.onNext) {
             this.props.onNext();
         }
 
-        this.setState({ current: current + 1});
+        if (current + 1 < this.props.children.length) {
+            this.setState({ current: current + 1, move });
+        }
+    }
+
+    handlePrev() {
+        const {
+            width,
+        } = this.state;
+        const {
+            visibleSideSlides,
+        } = this.props;
+
+        const current = this.state.current;
+        const baseWidth = width / ((visibleSideSlides * 2) + 1);
+        const distance = this.center() - (current - 1);
+        const move = distance * baseWidth;
+
+        if (this.props.onPrev) {
+            this.props.onPrev();
+        }
+
+        if (current - 1 >= 0) {
+            this.setState({ current: current - 1, move });
+        }
+    }
+
+    center() {
+        const length = React.Children.count(this.props.children);
+        return Math.floor(length / 2);
     }
 
     renderSlides() {
@@ -76,6 +109,7 @@ class NetflixCarousel extends Component {
                 <figure
                     key={index}
                     className={slideClasses}
+                    style={this.getSlideStyle(index, this.state.current)}
                 >
                     {slide}
                 </figure>
@@ -112,17 +146,9 @@ class NetflixCarousel extends Component {
         );
     }
 
-    renderIndicators() {
-        const classes = classnames(Classname.INDICATOR);
-        return (
-            <span className={classes} role="button">Indicator</span>
-        );
-    }
-
     render() {
         const {
             enableArrows,
-            enableIndicator,
         } = this.props;
         const {
             width,
@@ -136,7 +162,6 @@ class NetflixCarousel extends Component {
                 style={{ width: `${width}px`, height: `${height}px` }}
             >
                 {enableArrows && this.renderArrows()}
-                {enableIndicator && this.renderIndicators()}
                 {this.renderSlides()}
             </div>
         );
@@ -145,12 +170,9 @@ class NetflixCarousel extends Component {
 
 NetflixCarousel.propTypes = {
     children: PropTypes.any.isRequired,
-    centerMode: PropTypes.bool,
     enableArrows: PropTypes.bool,
-    enableIndicator: PropTypes.bool,
     onPrev: PropTypes.func,
     onNext: PropTypes.func,
-    onHover: PropTypes.func,
     width: PropTypes.oneOfType([
         PropTypes.number,
         PropTypes.string,
@@ -159,19 +181,16 @@ NetflixCarousel.propTypes = {
         PropTypes.number,
         PropTypes.string,
     ]),
-    visibleSlides: PropTypes.number,
+    visibleSideSlides: PropTypes.number,
 };
 
 NetflixCarousel.defaultProps = {
-    centerMode: true,
     enableArrows: false,
-    enableIndicator: false,
     onPrev: () => {},
     onNext: () => {},
-    onHover: () => {},
     width: 'auto',
     height: 'auto',
-    visibleSlides: 5,
+    visibleSideSlides: 2,
 };
 
 export default NetflixCarousel;

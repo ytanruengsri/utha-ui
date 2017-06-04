@@ -6,10 +6,9 @@ import NetflixCarousel from './NetflixCarousel';
 const createCardStyle = () => {
     return {
         display: 'flex',
-        height: '128px',
-        width: '230px',
         color: '#FFF',
         justifyContent: 'center',
+        height: '100%',
         backgroundColor: randomColor(),
     };
 };
@@ -19,13 +18,14 @@ const titleStyle = {
     fontWeight: 'bold',
 };
 
-storiesOf('Css Carousel', module)
+storiesOf('Netflix Carousel', module)
 .add('default', () => {
     return (
         <NetflixCarousel
-            width={'960px'}
-            height={'480px'}
+            width={960}
+            height={480}
             enableArrows
+            visibleSideSlides={1}
             onPrev={action('prev')}
             onNext={action('next')}
         >

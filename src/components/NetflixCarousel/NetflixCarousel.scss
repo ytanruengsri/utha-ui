@@ -11,10 +11,13 @@
     }
 
     &__slide {
-      z-index: 1;
+      position: relative;
       display: block;
       margin: 0;
       padding: 0;
+      flex: 0 0 auto;
+      cursor: pointer;
+      transition: transform 600ms ease;
     }
 
     &__actions {
