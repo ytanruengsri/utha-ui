@@ -2,11 +2,43 @@
   .ucollapsepanel {
 
     &__heading {
+      display: flex;
 
-    }
+      // Usability
+      cursor: pointer;
 
-    &__pane {
+      button {
+        width: 100%;
 
+        // Look&Feel
+        border-radius: 0;
+        border: none;
+        outline: none;
+        color: #333;
+        background-color: transparent;
+        padding: 0;
+        margin: 0;
+
+        // Text
+        text-align: left;
+
+        // Usability
+        cursor: pointer;
+
+      }
+
+      &__icon {
+        align-self: center;
+        transition: transform 350ms;
+        outline: none;
+
+        // Usability
+        cursor: pointer;
+      }
+
+      &--active &__icon {
+        transform: rotate(90deg);
+      }
     }
   }
 }

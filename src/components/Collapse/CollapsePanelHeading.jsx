@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
+import IconAngleRight from 'react-icons/lib/fa/angle-right';
 
 const Classname = {
     BASE: 'ucollapsepanel__heading',
     ACTIVE: 'ucollapsepanel__heading--active',
+    ICON: 'ucollapsepanel__heading__icon',
 };
 
 class CollapsePanelHeading extends Component {
@@ -15,14 +17,31 @@ class CollapsePanelHeading extends Component {
                 [Classname.ACTIVE]: this.props.active,
             },
         );
+        const iconClasses = classnames(
+            Classname.ICON,
+            {
+                [Classname.ACTIVE]: this.props.active,
+            },
+        );
         return (
-            <button
-                id={`panel-heading-${this.props.id}`}
+            <div
                 className={baseClasses}
-                onClick={this.props.onClick}
             >
-                {this.props.children}
-            </button>
+                <button
+                    id={`panel-heading-${this.props.id}`}
+                    onClick={this.props.onClick}
+                >
+                    {this.props.children}
+                </button>
+                <span
+                    className={iconClasses}
+                    role="button"
+                    tabIndex={0}
+                    onClick={this.props.onClick}
+                >
+                    <IconAngleRight />
+                </span>
+            </div>
         );
     }
 }

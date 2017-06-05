@@ -22,6 +22,7 @@ storiesOf('Collapse', module)
         <CollapsePanel id="lorem-ipsum">
             <CollapsePanelHeading>
                 <h3>{first.heading}</h3>
+                <p>subheading1</p>
             </CollapsePanelHeading>
             <CollapsePanelBody>
                 <p>{first.body}</p>
@@ -30,6 +31,7 @@ storiesOf('Collapse', module)
         <CollapsePanel id="li-europan-lingues">
             <CollapsePanelHeading>
                 <h3>{second.heading}</h3>
+                <p>subheading 2</p>
             </CollapsePanelHeading>
             <CollapsePanelBody>
                 <p>{second.body}</p>
@@ -38,6 +40,7 @@ storiesOf('Collapse', module)
         <CollapsePanel id="cicero">
             <CollapsePanelHeading>
                 <h3>{third.heading}</h3>
+                <p>subheading 3</p>
             </CollapsePanelHeading>
             <CollapsePanelBody>
                 <p>{third.body}</p>
