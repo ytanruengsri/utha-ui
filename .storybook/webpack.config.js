@@ -46,7 +46,7 @@ module.exports = {
             '.less',
         ],
         alias: {
-            _src: path.resolve(appRootDir.get(), './packages/ui/src'),
+            MOCK: path.resolve(appRootDir.get(), './src/__mock__'),
         },
     },
     plugins: [

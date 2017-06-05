@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, isValidElement } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
@@ -66,20 +66,20 @@ class Tabs extends Component {
 
         let activeTab = null;
         const tabs = React.Children.map(children, (tab) => {
-            if (!tab) return null;
+            if (!tab || !isValidElement(tab)) return null;
 
             const tabProps = tab.props || tab._store.props || {};
             const isTabActive = tabProps.id === activeKey;
             if (isTabActive) {
                 activeTab = tabProps.children;
             }
-            // or create <li> element here
+
             return React.cloneElement(tab, {
                 id: tabProps.id,
                 active: isTabActive,
                 headline: tabProps.headline,
                 disabled: tabProps.disabled,
-                onClick: (e) => {
+                onClick: () => {
                     this.activate(tabProps.id);
                 },
             });

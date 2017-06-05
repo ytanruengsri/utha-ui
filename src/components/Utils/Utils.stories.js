@@ -3,6 +3,7 @@ import { storiesOf } from '@kadira/storybook';
 import throttle from '../../utils/throttle';
 import debounce from '../../utils/debounce';
 import PubSub from '../../utils/pub-sub';
+import memoize from '../../utils/memoize';
 
 let i = 0;
 let j = 0;
@@ -25,10 +26,17 @@ const noDebounceFunc = () => {
     l += 1;
 };
 
-storiesOf('Utils', module)
-.add('throttle', () => {
+const removeEventListeners = () => {
+    window.removeEventListener('mousemove', throttleFunc);
+    window.removeEventListener('mousemove', noThrottleFunc);
     window.removeEventListener('mousemove', debounceFunc);
     window.removeEventListener('mousemove', noDebounceFunc);
+};
+
+storiesOf('Utils', module)
+.add('throttle', () => {
+    removeEventListeners();
+
     window.addEventListener('mousemove', throttleFunc);
     window.addEventListener('mousemove', noThrottleFunc);
     return (
@@ -41,8 +49,8 @@ storiesOf('Utils', module)
     );
 })
 .add('debounce', () => {
-    window.removeEventListener('mousemove', throttleFunc);
-    window.removeEventListener('mousemove', noThrottleFunc);
+    removeEventListeners();
+
     window.addEventListener('mousemove', debounceFunc);
     window.addEventListener('mousemove', noDebounceFunc);
     return (
@@ -55,10 +63,8 @@ storiesOf('Utils', module)
     );
 })
 .add('pub/sub', () => {
-    window.removeEventListener('mousemove', throttleFunc);
-    window.removeEventListener('mousemove', noThrottleFunc);
-    window.removeEventListener('mousemove', debounceFunc);
-    window.removeEventListener('mousemove', noDebounceFunc);
+    removeEventListeners();
+
     const BUTTON_CLICK_TOPIC = 'BUTTON_CLICK';
     const OTHER_TOPIC = 'OTHER';
     const pubSub = new PubSub();
@@ -92,6 +98,31 @@ storiesOf('Utils', module)
                     Clear All Subscriptions
                 </button>
             </div>
+        </div>
+    );
+})
+.add('memorize', () => {
+    removeEventListeners();
+    let count = 0;
+    let memo = 0;
+    const sum = (a, b) => {
+        count += 1;
+        document.getElementById('original').innerHTML = `${count}`;
+        return a + b;
+    };
+    const memorizedSum = memoize(sum);
+    const handleOnClick = () => {
+        memo += 1;
+        document.getElementById('memo').innerHTML = `${memo}`;
+        memorizedSum(1, 2);
+    };
+    return (
+        <div id="container">
+            <button onClick={() => handleOnClick()}>Execute Function</button>
+            <h3>Count of original function execution</h3>
+            <div id="original">0</div>
+            <h3>Count of memorized function execution</h3>
+            <div id="memo">0</div>
         </div>
     );
 });
