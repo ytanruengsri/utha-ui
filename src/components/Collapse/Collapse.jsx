@@ -30,11 +30,17 @@ class Collapse extends Component {
             activeKeys,
         } = this.state;
 
+        // Should close panel
         let activePanels = [...activeKeys];
-        if (accordion) {
-            activePanels = [activeKey];
-        } else {
-            activePanels.push(activeKey);
+        const activeKeyIndex = activeKeys.indexOf(activeKey);
+        if (activeKeyIndex !== -1) {
+            activePanels.splice(activeKeyIndex, 1);
+        } else { // Should open panel
+            if (accordion) {
+                activePanels = [activeKey];
+            } else {
+                activePanels.push(activeKey);
+            }
         }
 
         this.setState({
