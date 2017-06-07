@@ -1,6 +1,7 @@
 import React, { Component, isValidElement } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
+import debounce from '../../utils/debounce';
 
 import Tab from './Tab';
 import './Tabs.scss';
@@ -24,11 +25,17 @@ const Justify = [
     'end',
 ];
 
+const DEBOUNCE_DELAY = 250;
+
 class Tabs extends Component {
     constructor(props) {
         super(props);
 
         this.activate = this.activate.bind(this);
+        this.handleResize = debounce(
+            this.handleResize.bind(this),
+            DEBOUNCE_DELAY,
+        );
 
         this.state = {
             activeKey: props.activeKey || props.defaultActiveKey,

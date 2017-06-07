@@ -11,6 +11,7 @@ const Classname = {
     ACTIONS: 'ucarousel--netflix__actions',
     BUTTON: 'ucarousel--netflix__button',
 };
+const aspectRation = 16 / 9;
 
 class NetflixCarousel extends Component {
     constructor(props) {
@@ -24,75 +25,66 @@ class NetflixCarousel extends Component {
         this.getSlideStyle = this.getSlideStyle.bind(this);
 
         this.state = {
-            current: this.center(),
-            move: 0,
             width: props.width,
             height: props.height,
+            move: 0,
+            index: 0,
+            maxIndex: Math.ceil(React.Children.count(props.children) / props.visibleSlides),
         };
     }
 
     getSlideStyle() {
         const {
-            visibleSideSlides,
+            visibleSlides,
         } = this.props;
         const {
             width,
         } = this.state;
 
-        const baseWidth = width / ((visibleSideSlides * 2) + 1);
-        const proportionalHeight = baseWidth / (16 / 9);
-        const length = React.Children.count(this.props.children);
-        const offset = length % 2 === 0 ? -width / 10 : 0;
+        const slideWidth = width / visibleSlides;
+        const proportionalHeight = slideWidth / aspectRation;
 
         return {
-            width: `${baseWidth}px`,
+            width: `${slideWidth}px`,
             height: `${proportionalHeight}px`,
-            transform: ` translateX(${this.state.move + offset}px)`,
+            transform: ` translateX(${this.state.move}px)`,
         };
     }
 
     handleNext() {
         const {
-            width,
+            index: currentIndex,
+            maxIndex,
         } = this.state;
-        const {
-            visibleSideSlides,
-        } = this.props;
 
-        const current = this.state.current;
-        const baseWidth = width / ((visibleSideSlides * 2) + 1);
-        const distance = this.center() - (current + 1);
-        const move = distance * baseWidth;
-
-        if (this.props.onNext) {
-            this.props.onNext();
+        const nextIndex = currentIndex + 1;
+        if (nextIndex === maxIndex) {
+            return;
         }
 
-        if (current + 1 < this.props.children.length) {
-            this.setState({ current: current + 1, move });
-        }
+        const move = -(nextIndex * this.props.width);
+        this.setState({
+            index: nextIndex,
+            move,
+        });
     }
 
     handlePrev() {
         const {
-            width,
+            index: currentIndex,
+            move: currentMove,
         } = this.state;
-        const {
-            visibleSideSlides,
-        } = this.props;
 
-        const current = this.state.current;
-        const baseWidth = width / ((visibleSideSlides * 2) + 1);
-        const distance = this.center() - (current - 1);
-        const move = distance * baseWidth;
-
-        if (this.props.onPrev) {
-            this.props.onPrev();
+        if (currentIndex === 0) {
+            return;
         }
 
-        if (current - 1 >= 0) {
-            this.setState({ current: current - 1, move });
-        }
+        const nextIndex = currentIndex - 1;
+        const move = currentMove + this.props.width;
+        this.setState({
+            index: nextIndex,
+            move,
+        });
     }
 
     center() {
@@ -181,7 +173,7 @@ NetflixCarousel.propTypes = {
         PropTypes.number,
         PropTypes.string,
     ]),
-    visibleSideSlides: PropTypes.number,
+    visibleSlides: PropTypes.number,
 };
 
 NetflixCarousel.defaultProps = {
@@ -190,7 +182,7 @@ NetflixCarousel.defaultProps = {
     onNext: () => {},
     width: 'auto',
     height: 'auto',
-    visibleSideSlides: 2,
+    visibleSlides: 2,
 };
 
 export default NetflixCarousel;

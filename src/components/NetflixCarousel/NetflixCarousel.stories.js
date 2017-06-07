@@ -25,7 +25,7 @@ storiesOf('Netflix Carousel', module)
             width={960}
             height={480}
             enableArrows
-            visibleSideSlides={1}
+            visibleSlides={5}
             onPrev={action('prev')}
             onNext={action('next')}
         >
