@@ -5,7 +5,7 @@ export default (func, delay = 250, scope) => {
     let timeout;
     return (...args) => {
         const context = scope || this;
-        const now = +new Date; // eslint-disable-line
+        const now = Number(new Date());
 
         if (last && now < last + delay) {
             clearTimeout(timeout);

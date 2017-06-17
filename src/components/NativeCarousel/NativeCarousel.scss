@@ -11,6 +11,10 @@ $moveRight: $slideWidth * ($growFactor - 1);
     white-space: nowrap;
     overflow-x: auto;
 
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
     &__inner {
       transition: $duration transform;
       white-space: nowrap;

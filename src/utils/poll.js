@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 export default (fn, timeout, interval = 100) => {
     const endTime = Number(new Date()) + (timeout || 2000);
 

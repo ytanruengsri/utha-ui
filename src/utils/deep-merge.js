@@ -23,11 +23,11 @@ function defaultArrayMerge(target, source, optionsArgument) {
     const destination = target.slice();
     source.forEach((e, i) => {
         if (typeof destination[i] === 'undefined') {
-            destination[i] = cloneIfNecessary(e, optionsArgument)
+            destination[i] = cloneIfNecessary(e, optionsArgument);
         } else if (isMergeableObject(e)) {
-            destination[i] = deepmerge(target[i], e, optionsArgument)
+            destination[i] = deepmerge(target[i], e, optionsArgument);
         } else if (target.indexOf(e) === -1) {
-            destination.push(cloneIfNecessary(e, optionsArgument))
+            destination.push(cloneIfNecessary(e, optionsArgument));
         }
     });
     return destination;
@@ -37,14 +37,14 @@ function mergeObject(target, source, optionsArgument) {
     const destination = {};
     if (isMergeableObject(target)) {
         Object.keys(target).forEach((key) => {
-            destination[key] = cloneIfNecessary(target[key], optionsArgument)
+            destination[key] = cloneIfNecessary(target[key], optionsArgument);
         });
     }
     Object.keys(source).forEach((key) => {
         if (!isMergeableObject(source[key]) || !target[key]) {
-            destination[key] = cloneIfNecessary(source[key], optionsArgument)
+            destination[key] = cloneIfNecessary(source[key], optionsArgument);
         } else {
-            destination[key] = deepmerge(target[key], source[key], optionsArgument)
+            destination[key] = deepmerge(target[key], source[key], optionsArgument);
         }
     });
     return destination;

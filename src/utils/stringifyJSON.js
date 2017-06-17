@@ -26,7 +26,7 @@ function stringify(obj) {
         return value(obj);
     }
 
-    const map = Object.keys(obj).map(key => {
+    const map = Object.keys(obj).map((key) => {
         if (typeof obj[key] === 'function' || typeof obj[key] === 'undefined') return null;
         return `"${key}": ${value(obj[key])}`;
     });
