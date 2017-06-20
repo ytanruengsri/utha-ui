@@ -67,6 +67,10 @@ class NetflixCarousel extends Component {
             index: nextIndex,
             move,
         });
+
+        if (this.props.onNext) {
+            this.props.onNext();
+        }
     }
 
     handlePrev() {
@@ -85,6 +89,10 @@ class NetflixCarousel extends Component {
             index: nextIndex,
             move,
         });
+
+        if (this.props.onPrev) {
+            this.props.onPrev();
+        }
     }
 
     center() {

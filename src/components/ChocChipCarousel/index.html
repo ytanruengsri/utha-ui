@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./ChocChipCarousel.css">
+    <title>Choc Chip Carousel</title>
+</head>
+<body>
+    <div class="ucarousel-chocchip__container">
+        <div class="ucarousel-chocchip__items"></div>
+    </div>
+    <div class="ucontrol-panel">
+        <span>Items</span>
+        <input id="ucontrol-panel__items" type="range" min="3" max="20" onchange="onNumberOfItemsChange(this.value)">
+        <span id="ucontrol-panel__items-count"></span>
+    </div>
+    <button class="ucarousel-chocchip__nav--prev" onclick="prev()">&#10094;</button>
+    <button class={"ucarousel-chocchip__nav--next" onclick="next()">&#10095;</button>
+    <script src="./ChocChipCarousel.js"></script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+.ucarousel-chocchip__container {
+    position: relative;
+    margin: 0 auto 40px;
+    width: 210px;
+    height: 140px;
+    perspective: 1100px;
+    border: 1px solid #CCC;
+}
+
+.ucarousel-chocchip__items {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: transform .6s ease;
+}
+
+.ucarousel-chocchip__item {
+    margin: 0;
+    display: block;
+    position: absolute;
+    width: 186px;
+    height: 116px;
+    left: 10px;
+    top: 10px;
+    color: white;
+    text-align: center;
+    line-height: 80px;
+    transition: transform .6s ease;
+    border: 2px solid black;
+}
+
+.ucarousel-chocchip__items .ucarousel-chocchip__item:nth-child(1) { background-color: rgba(255, 0, 0, 0.8); }
+.ucarousel-chocchip__items .ucarousel-chocchip__item:nth-child(2) { background-color: rgba(255, 76, 0, 0.8); }
+.ucarousel-chocchip__items .ucarousel-chocchip__item:nth-child(3) { background-color: rgba(255, 153, 0, 0.8); }
+.ucarousel-chocchip__items .ucarousel-chocchip__item:nth-child(4) { background-color: rgba(255, 229, 0, 0.8); }
+.ucarousel-chocchip__items .ucarousel-chocchip__item:nth-child(5) { background-color: rgba(203, 255, 0, 0.8); }
+.ucarousel-chocchip__items .ucarousel-chocchip__item:nth-child(6) { background-color: rgba(127, 255, 0, 0.8); }
+.ucarousel-chocchip__items .ucarousel-chocchip__item:nth-child(7) { background-color: rgba(51, 255, 0, 0.8); }
+.ucarousel-chocchip__items .ucarousel-chocchip__item:nth-child(8) { background-color: rgba(0, 255, 25, 0.8); }
+.ucarousel-chocchip__items .ucarousel-chocchip__item:nth-child(9) { background-color: rgba(0, 255, 101, 0.8); }
+.ucarousel-chocchip__items .ucarousel-chocchip__item:nth-child(10) { background-color: rgba(0, 255, 178, 0.8); }
+.ucarousel-chocchip__items .ucarousel-chocchip__item:nth-child(11) { background-color: rgba(0, 255, 254, 0.8); }
+.ucarousel-chocchip__items .ucarousel-chocchip__item:nth-child(12) { background-color: rgba(0, 178, 255, 0.8); }
+.ucarousel-chocchip__items .ucarousel-chocchip__item:nth-child(13) { background-color: rgba(0, 101, 255, 0.8); }
+.ucarousel-chocchip__items .ucarousel-chocchip__item:nth-child(14) { background-color: rgba(0, 25, 255, 0.8); }
+.ucarousel-chocchip__items .ucarousel-chocchip__item:nth-child(15) { background-color: rgba(50, 0, 255, 0.8); }
+.ucarousel-chocchip__items .ucarousel-chocchip__item:nth-child(16) { background-color: rgba(127, 0, 255, 0.8); }
+.ucarousel-chocchip__items .ucarousel-chocchip__item:nth-child(17) { background-color: rgba(203, 0, 255, 0.8); }
+.ucarousel-chocchip__items .ucarousel-chocchip__item:nth-child(18) { background-color: rgba(255, 0, 229, 0.8); }
+.ucarousel-chocchip__items .ucarousel-chocchip__item:nth-child(19) { background-color: rgba(255, 0, 153, 0.8); }
+.ucarousel-chocchip__items .ucarousel-chocchip__item:nth-child(20) { background-color: rgba(255, 0, 76, 0.8); }
+
+.ucarousel-chocchip__nav--prev, .ucarousel-chocchip__nav--next {
+
+}

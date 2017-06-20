@@ -10,8 +10,7 @@ class InfiniteScroll extends Component {
     constructor(props) {
         super(props);
 
-        // debounced functions are stateful,
-        // we have to create one debounced function per component instance.
+        // Binding
         this.checkDistanceFromBottom = throttle(
             this.checkDistanceFromBottom.bind(this),
             props.delay,

@@ -1,0 +1,36 @@
+@keyframes fade {
+    from {
+        opacity: .4
+    } 
+    to {
+        opacity: 1
+    }
+}
+
+.ucarousel-vanilla__container {
+    position: relative;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.ucarousel-vanilla__items {
+    list-style: none;
+}
+
+.ucarousel-vanilla__item {
+    display: none;
+    width: 560px;
+    height: 142px;
+    line-height: 142px;
+    text-align: center;
+    color: white;
+    background-color: #3498DB;
+}
+
+.ucarousel-vanilla__item.fade {
+    animation: fade .5s
+}
+
+.ucarousel-vanilla__nav--prev, .ucarousel-vanilla__nav--next {
+
+}

@@ -25,17 +25,11 @@ const Justify = [
     'end',
 ];
 
-const DEBOUNCE_DELAY = 250;
-
 class Tabs extends Component {
     constructor(props) {
         super(props);
 
         this.activate = this.activate.bind(this);
-        this.handleResize = debounce(
-            this.handleResize.bind(this),
-            DEBOUNCE_DELAY,
-        );
 
         this.state = {
             activeKey: props.activeKey || props.defaultActiveKey,
