@@ -1,17 +1,19 @@
 import React from 'react';
-import { configure, addDecorator, setAddon } from '@kadira/storybook';
+import { configure, setAddon, addDecorator } from '@storybook/react';
 import infoAddon from '@storybook/addon-info';
 
-setAddon(infoAddon);
+setAddon(infoAddon); 
 
+const storyContainerStyle = {
+    padding: '10px'
+};
 addDecorator((story) => (
-    <div style={{ padding: '10px' }}>
+    <div style={storyContainerStyle}>
         {story()}
     </div>
 ));
 
 const req = require.context('../src/components', true, /\.stories\.jsx?$/);
-
 function loadStories() {
     req.keys().forEach((filename) => req(filename));
 }

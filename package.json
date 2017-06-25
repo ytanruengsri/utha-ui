@@ -21,7 +21,9 @@
   },
   "devDependencies": {
     "@kadira/storybook": "^2.35.3",
+    "@storybook/addon-actions": "^3.1.5",
     "@storybook/addon-info": "^3.0.0-alpha.0",
+    "@storybook/react": "^3.1.5",
     "babel-eslint": "^7.2.3",
     "css-loader": "^0.28.1",
     "eslint": "^3.19.0",
@@ -36,8 +38,8 @@
     "randomcolor": "^0.5.2",
     "raw-loader": "^0.5.1",
     "sass-loader": "^6.0.5",
-    "style-loader": "^0.17.0",
-    "webpack": "^2.5.1"
+    "style-loader": "^0.18.2",
+    "webpack": "^2.6.1"
   },
   "scripts": {
     "lint": "eslint src --ext .jsx --ext .js",

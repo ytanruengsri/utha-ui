@@ -1,24 +1,38 @@
-const webpack = require('@kadira/storybook/node_modules/webpack');
+const webpack = require('webpack');
 const path = require('path');
+const fs = require('fs');
 const appRootDir = require('app-root-dir');
 
 module.exports = {
     module: {
-        loaders: [
+        rules: [
             {
-                test: /\.(css|scss)$/,
-                loaders: [
-                    'style-loader?insertInto=body',
-                    'css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]',
-                    'sass-loader',
+                test: /\.s?css$/,
+                use: [
+                    {
+                        loader: 'style-loader',
+                        options: {
+                            insertInto: 'body'
+                        }
+                    },
+                    {
+                        loader: 'css-loader',
+                    },
+                    { loader: 'postcss-loader' },
+                    { loader: 'sass-loader' },
                 ],
                 exclude: path.join(__dirname, '..', 'node_modules'),
             },
             {
                 test: /\.css$/,
-                loaders: [
-                    'style-loader?insertInto=body',
-                    'css-loader'
+                use: [
+                    {
+                        loader: 'style-loader',
+                        options: {
+                            insertInto: 'body'
+                        }
+                    },
+                    { loader: 'css-loader' },
                 ],
                 include: path.join(__dirname, '..', 'node_modules'),
             },
@@ -32,18 +46,26 @@ module.exports = {
             },
             {
                 test: /\.(png|jpg|gif)$/,
-                loaders: ['url-loader?limit=1024&name=images/[name].[ext]'],
+                use: [
+                    {
+                        loader: 'url-loader',
+                        options: {
+                            limit: 1024,
+                            name: 'images/[name].[ext]',
+                        },
+                    },
+                ],
             },
         ]
     },
     resolve: {
         extensions: [
-            '',
             '.js',
             '.jsx',
             '.css',
             '.scss',
             '.less',
+            '.json'
         ],
         alias: {
             MOCK: path.resolve(appRootDir.get(), './src/__mock__'),

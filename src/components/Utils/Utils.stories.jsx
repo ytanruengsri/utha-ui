@@ -1,5 +1,5 @@
 import React from 'react';
-import { storiesOf } from '@kadira/storybook';
+import { storiesOf } from '@storybook/react';
 import throttle from '../../utils/throttle';
 import debounce from '../../utils/debounce';
 import PubSub from '../../utils/pub-sub';
