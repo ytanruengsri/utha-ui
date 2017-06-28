@@ -39,12 +39,16 @@
     "raw-loader": "^0.5.1",
     "sass-loader": "^6.0.5",
     "style-loader": "^0.18.2",
+    "svg-fill-loader": "^0.0.8",
+    "svg-sprite-loader": "^3.0.5",
+    "svgo-loader": "^1.2.1",
     "webpack": "^2.6.1"
   },
   "scripts": {
     "lint": "eslint src --ext .jsx --ext .js",
     "start": "start-storybook -p 9001 -c .storybook",
     "nojekyll": "touch .nojekyll",
+    "build": "NODE_ENV=production webpack",
     "deploy": "gh-pages-deploy",
     "storybook": "npm run start",
     "build-storybook": "build-storybook -o public"

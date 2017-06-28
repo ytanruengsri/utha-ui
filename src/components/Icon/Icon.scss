@@ -1,0 +1,41 @@
+:global {
+    .uicon {
+        display: inline-block;
+        background-image: url('./svg/out/sprite.svg');
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        &.sm {
+            width: 1em;
+            height: 1em;
+        }
+        &.lg {
+            width: 1.33333333em;
+            height: 1.33333333em;
+        }
+        &.x2 {
+            width: 2em;
+            height: 2em;
+        }
+        &.x3 {
+            width: 3em;
+            height: 3em;
+        }
+        &.x4 {
+            width: 4em;
+            height: 4em;
+        }
+        &.x5 {
+            width: 5em;
+            height: 5em;
+        }
+
+        &--back { background-position: 0 0; }
+        &--next { background-position: 0 0; }
+        &--download { background-position: 0 0; }
+        &--upload { background-position: 0 0; }
+        &--like { background-position: 0 0; }
+        &--like-filled { background-position: 0 0; }
+        &--play-button { background-position: 0 0; }
+    }
+}

@@ -38,7 +38,43 @@ module.exports = {
             },
             {
                 test: /\.svg$/,
-                loader: 'raw-loader',
+                use: [
+                    {
+                        loader: 'svg-sprite-loader',
+                        include: resolve('./src/components/Icon/svg'),
+                        options: {
+                            extract: true,
+                            spriteFilename: 'icon-sprite.svg'
+                        }
+                    },
+                    {
+                        loader: 'svgo-loader',
+                        options: {
+                            plugins: [
+                                {
+                                    removeTitle: true
+                                },
+                                {
+                                    removeDesc: true
+                                },
+                                {
+                                    removeDimensions: true
+                                },
+                                {
+                                    cleanupIDs: true
+                                },
+                                {
+                                    convertColors: {
+                                        shorthex: false
+                                    }
+                                },
+                                {
+                                    convertPathData: false
+                                }
+                            ]
+                        }
+                    }
+                ]
             },
             {
                 test: /\.json/,
